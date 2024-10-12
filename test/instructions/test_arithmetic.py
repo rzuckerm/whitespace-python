@@ -57,7 +57,7 @@ class DivTestCase(unittest.TestCase):
         vm.vstack.push(1)
         vm.vstack.push(0)
 
-        with self.assertRaisesRegex(ZeroDivisionError, 'integer division by zero'):
+        with self.assertRaisesRegex(ZeroDivisionError, "integer division by zero"):
             Div().execute(vm)
 
 
@@ -77,5 +77,5 @@ class ModTestCase(unittest.TestCase):
         vm.vstack.push(1)
         vm.vstack.push(0)
 
-        with self.assertRaisesRegex(ZeroDivisionError, 'modulo by zero'):
+        with self.assertRaisesRegex(ZeroDivisionError, "modulo by zero"):
             Mod().execute(vm)

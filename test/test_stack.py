@@ -33,10 +33,10 @@ class StackTestCase(unittest.TestCase):
 
 class NamedStackTestCase(unittest.TestCase):
     def test_name_is_included_in_error_message(self):
-        stack = Stack('a stack')
+        stack = Stack("a stack")
 
-        with self.assertRaisesRegex(StackEmptyError, 'a stack'):
+        with self.assertRaisesRegex(StackEmptyError, "a stack"):
             stack.pop()
 
-        with self.assertRaisesRegex(StackEmptyError, 'a stack'):
+        with self.assertRaisesRegex(StackEmptyError, "a stack"):
             stack.top()

@@ -31,14 +31,14 @@ class Mod(Instruction):
 
 def _div(a, b):
     if b == 0:
-        raise ZeroDivisionError('integer division by zero')
+        raise ZeroDivisionError("integer division by zero")
 
     return a // b
 
 
 def _mod(a, b):
     if b == 0:
-        raise ZeroDivisionError('modulo by zero')
+        raise ZeroDivisionError("modulo by zero")
 
     return a % b
 
