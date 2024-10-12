@@ -62,7 +62,7 @@ Clone the repository and install the dependencies:
 
     $ git clone git@github.com:rzuckerm/whitespace-python.git
     $ cd whitespace-python
-    $ poetry env '<python-version>'
+    $ poetry env <python-version>
     $ poetry install
 
 where `<python-version>` is the version of python that you have installed. This
