@@ -56,3 +56,6 @@ disable = [
     "too-many-instance-attributes",
     "too-many-return-statements",
 ]
+
+[tool.coverage.report]
+omit = ["__main__.py"]

@@ -1,4 +1,4 @@
-from .error import StackEmptyError
+from .error import StackEmptyError, StackIndexError
 
 
 class Stack:
@@ -26,3 +26,13 @@ class Stack:
 
     def __len__(self):
         return len(self._elements)
+
+    def __getitem__(self, key):
+        if key < 0:
+            raise StackIndexError(self.name)
+
+        idx = len(self) - key - 1
+        if idx < 0:
+            raise StackIndexError(self.name)
+
+        return self._elements[idx]

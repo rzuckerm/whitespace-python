@@ -1,6 +1,6 @@
 import unittest
 
-from whitespace.error import StackEmptyError
+from whitespace.error import StackEmptyError, StackIndexError
 from whitespace.stack import Stack
 
 
@@ -14,11 +14,20 @@ class StackTestCase(unittest.TestCase):
         with self.assertRaises(StackEmptyError):
             stack.top()
 
+        with self.assertRaises(StackIndexError):
+            stack[-1]
+
+        with self.assertRaises(StackIndexError):
+            stack[0]
+
         stack.push(3)
         stack.push(2)
         stack.push(1)
 
         self.assertEqual(stack.top(), 1)
+        self.assertEqual(stack[0], 1)
+        self.assertEqual(stack[1], 2)
+        self.assertEqual(stack[2], 3)
         self.assertEqual(stack.pop(), 1)
         self.assertEqual(stack.top(), 2)
 
@@ -40,3 +49,6 @@ class NamedStackTestCase(unittest.TestCase):
 
         with self.assertRaisesRegex(StackEmptyError, "a stack"):
             stack.top()
+
+        with self.assertRaisesRegex(StackIndexError, "a stack"):
+            stack[42]

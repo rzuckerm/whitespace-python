@@ -1,3 +1,4 @@
+# pylint: disable=attribute-defined-outside-init
 from collections import namedtuple
 
 from .error import ParseError
@@ -6,6 +7,8 @@ from .instructions import (
     Dup,
     Swap,
     Discard,
+    Slide,
+    Copy,
     Add,
     Sub,
     Mul,
@@ -39,6 +42,9 @@ SourceLocation = namedtuple(
 
 class Parser:
     def __init__(self):
+        self._reset()
+
+    def _reset(self):
         self._instructions = []
 
         self._src = ""
@@ -62,24 +68,10 @@ class Parser:
         return self._parse(src)
 
     def _parse(self, src):
-        self._instructions = []
+        self._reset()
 
         self._src = src
         self._src_length = len(src)
-
-        self._current_index = -1
-        self._current_line = 0
-        self._current_column = -1
-
-        self._start_index = -1
-        self._start_line = 0
-        self._start_column = -1
-
-        self._substart_index = -1
-        self._substart_line = 0
-        self._substart_column = -1
-
-        self._next_line = False
 
         return self._parse_start()
 
@@ -111,6 +103,17 @@ class Parser:
         if t == SPACE:
             n = self._parse_number()
             return self._capture_instruction_and_continue(Push(n))
+        elif t == TAB:
+            t = self._next_token()
+
+            if t == SPACE:
+                n = self._parse_number()
+                return self._capture_instruction_and_continue(Copy(n))
+            elif t == LF:
+                n = self._parse_number()
+                return self._capture_instruction_and_continue(Slide(n))
+            else:
+                raise self._parse_error("expected a stack manipulation instruction")
         elif t == LF:
             t = self._next_token()
 

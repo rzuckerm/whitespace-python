@@ -4,6 +4,9 @@ Whitespace
 .. image:: https://img.shields.io/pypi/v/whitespace2.svg
     :target: https://pypi.org/project/whitespace2/
 
+.. image:: https://github.com/rzuckerm/whitespace-python/actions/workflows/makefile.yml
+    :target: https://github.com/rzuckerm/whitespace-python/actions/workflows/makefile.yml/badge.svg
+
 An interpreter written in `Python <https://www.python.org/>`_ for the imperative, stack-based language called `Whitespace`_.
 This is a fork of `<https://github.com/dwayne/whitespace-python>`_.
 
@@ -126,6 +129,7 @@ Credits
 Thanks to `Edwin Brady <https://edwinb.wordpress.com/>`_ and Chris Morris for designing/developing this programming language; they are also developers of the `Idris <https://en.wikipedia.org/wiki/Idris_(programming_language)>`_ programming language.
 
 .. _Whitespace: https://en.wikipedia.org/wiki/Whitespace_(programming_language)
+.. _pipenv: https://pipenv.pypa.io/en/stable/
 .. _poetry: https://python-poetry.org/docs/
 .. _pytest: https://docs.pytest.org/en/stable/
 .. _black: https://black.readthedocs.io/en/stable/

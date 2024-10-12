@@ -6,6 +6,8 @@ from whitespace.instructions import (
     Dup,
     Swap,
     Discard,
+    Slide,
+    Copy,
     Add,
     Sub,
     Mul,
@@ -61,6 +63,24 @@ class ParsingTestCase(unittest.TestCase):
         self.assertEqual(len(instructions), 1)
         self.assertIsInstance(instruction, Discard)
         self.assertEqual(instruction.source_location, SourceLocation(0, 0, 0, 2, 1, 0))
+
+    def test_it_parses_slide(self):
+        instructions = parse(" \t\n \t\t \n")
+        instruction = instructions[0]
+
+        self.assertEqual(len(instructions), 1)
+        self.assertIsInstance(instruction, Slide)
+        self.assertEqual(instruction.n, 6)
+        self.assertEqual(instruction.source_location, SourceLocation(0, 0, 0, 7, 1, 4))
+
+    def test_it_parses_copy(self):
+        instructions = parse(" \t  \t \t\n")
+        instruction = instructions[0]
+
+        self.assertEqual(len(instructions), 1)
+        self.assertIsInstance(instruction, Copy)
+        self.assertEqual(instruction.n, 5)
+        self.assertEqual(instruction.source_location, SourceLocation(0, 0, 0, 7, 0, 7))
 
     def test_it_parses_add(self):
         instructions = parse("\t   ")
