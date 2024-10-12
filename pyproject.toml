@@ -6,7 +6,7 @@ description = "An interpreter written in Python for the imperative, stack-backed
 authors = ["rzuckerm"]
 license = "LICENSE"
 readme = "README.rst"
-homepage = "https://github.com/rzuckerm/whitespace"
+homepage = "https://github.com/rzuckerm/whitespace-python"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
@@ -14,7 +14,8 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/rzuckerm/whitespace/issues"
+"Bug Tracker" = "https://github.com/rzuckerm/whitespace-python/issues"
+"Changelog" = "https://github.com/rzuckerm/whitespace-python/blob/master/CHANGELOG.rst"
 
 [tool.poetry.scripts]
 whitespace = "whitespace.cli:main"

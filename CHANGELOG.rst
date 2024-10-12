@@ -7,10 +7,12 @@ Change Log
 **Added**
 
 - `Black <https://black.readthedocs.io/en/stable/>`_ in order to make formatting consistent
+- Add CODEOWNERS file (fixes `#8 <https://github.com/rzuckerm/whitespace-python/issues/8>`_)
 
 **Changed**
 
-- Forked `<https://github.com/dwayne/whitespace-python>`_
+- Forked `<https://github.com/dwayne/whitespace-python>`_ to `<https//github.com/rzuckerm/whitespace-python>`_
+- Renamed package from ``whitespace`` to ``whitespace2`` (fixes `#9 <https://github.com/rzuckerm/whitespace-python/issues/9>`_)
 - Convert project to use `Poetry <https://python-poetry.org/docs/>`_ in order to simplify dependency management and publishing (fixes `#5 <https://github.com/rzuckerm/whitespace-python/issues/5>`_)
 - Number and label parsing is now done iteratively instead of recursively (fixes `#3 <https://github.com/rzuckerm/whitespace-python/issues/3>`_)
 - ```whitespace.interpreter.eval`` is renamed to ```whitespace.interpreter.run`` (fixes `#2 <https://github.com/rzuckerm/whitespace-python/issues/2>`_)
