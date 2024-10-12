@@ -9,8 +9,10 @@ Change Log
 - `Black <https://black.readthedocs.io/en/stable/>`_ in order to make formatting consistent
 - Add CODEOWNERS file (fixes `#8 <https://github.com/rzuckerm/whitespace-python/issues/8>`_)
 - Add Github actions for the following:
+
   - Lint and Test (fixes `#6 <https://github.com/rzuckerm/whitespace-python/issues/6>`_)
   - Publish (fixes `#7 <https://github.com/rzuckerm/whitespace-python/issues/7>`_)
+
 - Add tests for CLI (fixes `#14 <https://github.com/rzuckerm/whitespace-python/issues/14>`_). Test coverage is now **100%**
 
 **Changed**
