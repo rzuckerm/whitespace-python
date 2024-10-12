@@ -59,3 +59,4 @@ disable = [
 
 [tool.coverage.report]
 omit = ["__main__.py"]
+fail_under = 100

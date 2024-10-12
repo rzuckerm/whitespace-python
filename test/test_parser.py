@@ -326,6 +326,9 @@ class NumberParsingTestCase(unittest.TestCase):
         with self.assertRaisesRegex(ParseError, "line 0, column 3 to the end"):
             parse("   \t")
 
+        with self.assertRaisesRegex(ParseError, "line 0, column 0 to the end"):
+            parse(" x")
+
 
 class LabelParsingTestCase(unittest.TestCase):
     def test_it_parses_lf_terminated_spaces_tabs(self):
