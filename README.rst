@@ -1,10 +1,11 @@
 Whitespace
 ==========
 
-.. image:: https://img.shields.io/pypi/v/whitespace.svg
-    :target: https://pypi.org/project/whitespace/
+.. image:: https://img.shields.io/pypi/v/whitespace2.svg
+    :target: https://pypi.org/project/whitespace2/
 
 An interpreter written in `Python <https://www.python.org/>`_ for the imperative, stack-based language called `Whitespace`_.
+This is a fork of `<https://github.com/dwayne/whitespace-python>`_.
 
 Installation
 ------------
@@ -13,7 +14,7 @@ To install, simply use pip (or `pipenv`_):
 
 .. code-block:: bash
 
-    $ pip install whitespace
+    $ pip install whitespace2
 
 Usage
 -----
@@ -24,9 +25,9 @@ Let :code:`program.ws` be any `Whitespace`_ program. To execute it, type:
 
     $ whitespace program.ws
 
-You can find example `Whitespace`_ programs at `tests/fixtures <https://github.com/dwayne/whitespace-python/tree/master/tests/fixtures>`_.
+You can find example `Whitespace`_ programs at `tests/fixtures <https://github.com/rzuckerm/whitespace-python/tree/master/test/fixtures>`_.
 
-For example, here's the `factorial program <https://github.com/dwayne/whitespace-python/tree/master/tests/fixtures/fact.ws>`_:
+For example, here's the `factorial program <https://github.com/rzuckerm/whitespace-python/tree/master/test/fixtures/fact.ws>`_:
 
 .. code-block:: bash
 
@@ -39,42 +40,80 @@ Development
 
 Recommended tools:
 
- - `pyenv <https://github.com/pyenv/pyenv>`_
- - `pipenv`_
+ - `poetry`_
+ - `make <https://www.gnu.org/software/make/>`_
 
 Clone the repository and install the dependencies:
 
 .. code-block:: bash
 
-    $ git clone git@github.com:dwayne/whitespace-python.git
+    $ git clone git@github.com:rzuckerm/whitespace-python.git
     $ cd whitespace-python
-    $ pipenv shell
-    $ pipenv install --dev
+    $ poetry env '<python-version>'
+    $ poetry install
+
+where `<python-version>` is the version of python that you have installed. This
+must be at least python 3.8. Example for python 3.10:
+
+.. code-block:: bash
+
+    $ poetry env 3.10
 
 You're now all set to begin development.
+
+Formatting
+----------
+
+The code is formatted using `black`_.
+
+Run the formatter:
+
+.. code-block:: bash
+
+    $ make format
+
+Linting
+-------
+
+The code is linted using `black`_ and  `pylint`_.
+
+Run the linters:
+
+.. code-block:: bash
+
+    $ make lint
 
 Testing
 -------
 
-Tests are written using the built-in unit testing framework, `unittest <https://docs.python.org/3/library/unittest.html>`_.
+Tests are written using `pytest`_.
 
 Run all tests.
 
 .. code-block:: bash
 
-    $ python -m unittest
+    $ make test
 
 Run a specific test module.
 
 .. code-block:: bash
 
-    $ python -m unittest tests.test_parser
+    $ make test PYTEST_ARGS="-vvl -m test.<my-module>"
 
 Run a specific test case.
 
 .. code-block:: bash
 
-    $ python -m unittest tests.test_parser.ParserTestCase.test_it_parses_push
+    $ make test PYTEST_ARGS="-vvl -k test.test_parser.ParserTestCase.test_it_parses_push"
+
+Help
+----
+
+To get a list of make targets, run this:
+
+.. code-block:: bash
+
+    $ make help
 
 References
 ----------
@@ -87,4 +126,7 @@ Credits
 Thanks to `Edwin Brady <https://edwinb.wordpress.com/>`_ and Chris Morris for designing/developing this programming language; they are also developers of the `Idris <https://en.wikipedia.org/wiki/Idris_(programming_language)>`_ programming language.
 
 .. _Whitespace: https://en.wikipedia.org/wiki/Whitespace_(programming_language)
-.. _pipenv: https://github.com/pypa/pipenv
+.. _poetry: https://python-poetry.org/docs/
+.. _pytest: https://docs.pytest.org/en/stable/
+.. _black: https://black.readthedocs.io/en/stable/
+.. _pylint: https://pylint.readthedocs.io/en/stable/

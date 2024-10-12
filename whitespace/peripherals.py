@@ -12,7 +12,7 @@ class Keyboard:
         c = self._input.read(1)
 
         if not c:
-            raise IOError('unexpected EOF')
+            raise IOError("unexpected EOF")
 
         return c
 
@@ -20,18 +20,20 @@ class Keyboard:
         s = self._input.readline()
 
         if not s:
-            raise IOError('unexpected EOF')
+            raise IOError("unexpected EOF")
 
         try:
             n = int(s, 10)
-        except ValueError:
-            raise IOError('not a number: %s' % s)
+        except ValueError as exc:
+            raise IOError("not a number: %s" % s) from exc
         else:
             return n
 
 
 class TestKeyboard(Keyboard):
-    def __init__(self, typed=''):
+    __test__ = False
+
+    def __init__(self, typed=""):
         super().__init__(input=io.StringIO(typed))
 
     def enter(self, typed):
@@ -49,8 +51,8 @@ class Screen:
     def putc(self, n):
         try:
             c = chr(n)
-        except ValueError:
-            raise IOError('invalid Unicode code point: %d' % n)
+        except ValueError as exc:
+            raise IOError("invalid Unicode code point: %d" % n) from exc
         else:
             self._write(c)
 
@@ -63,6 +65,8 @@ class Screen:
 
 
 class TestScreen(Screen):
+    __test__ = False
+
     def __init__(self):
         super().__init__(output=io.StringIO())
 
@@ -70,5 +74,5 @@ class TestScreen(Screen):
     def contents(self):
         return self._output.getvalue()
 
-    def turnOff(self):
+    def turn_off(self):
         self._output.close()

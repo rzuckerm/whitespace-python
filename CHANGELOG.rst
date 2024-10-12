@@ -1,6 +1,22 @@
 Change Log
 ----------
 
+`1.0.0`_ (2024-10-12)
++++++++++++++++++++++
+
+**Added**
+
+- `Black <https://black.readthedocs.io/en/stable/>`_ in order to make formatting consistent
+- Add CODEOWNERS file (fixes `#8 <https://github.com/rzuckerm/whitespace-python/issues/8>`_)
+
+**Changed**
+
+- Forked `<https://github.com/dwayne/whitespace-python>`_ to `<https//github.com/rzuckerm/whitespace-python>`_
+- Renamed package from ``whitespace`` to ``whitespace2`` (fixes `#9 <https://github.com/rzuckerm/whitespace-python/issues/9>`_)
+- Convert project to use `Poetry <https://python-poetry.org/docs/>`_ in order to simplify dependency management and publishing (fixes `#5 <https://github.com/rzuckerm/whitespace-python/issues/5>`_)
+- Number and label parsing is now done iteratively instead of recursively (fixes `#3 <https://github.com/rzuckerm/whitespace-python/issues/3>`_)
+- ```whitespace.interpreter.eval`` is renamed to ```whitespace.interpreter.run`` (fixes `#2 <https://github.com/rzuckerm/whitespace-python/issues/2>`_)
+
 `1.0.0-beta.8`_ (2018-08-31)
 ++++++++++++++++++++++++++++
 
@@ -8,7 +24,7 @@ Change Log
 
 - A major rewrite of the system
 - A ``setup.cfg`` and simplified ``setup.py``
-- `Pylint <https://www.pylint.org/>`_ in order to keep an eye on the code style and quality
+- `Pylint <https://pylint.readthedocs.io/en/stable/>`_ in order to keep an eye on the code style and quality
 
 **Changed**
 
@@ -72,7 +88,8 @@ Change Log
 
 Birth!
 
-.. _`Unreleased`: https://github.com/dwayne/whitespace-python/compare/v1.0.0-beta.8...HEAD
+.. _`Unreleased`: https://github.com/rzuckerm/whitespace-python/compare/v1.0.0...HEAD
+.. _`1.0.0`: https://github.com/rzuckerm/whitespace-python/compare/v1.0.0-beta.8...v1.0.0
 .. _`1.0.0-beta.8`: https://github.com/dwayne/whitespace-python/compare/v1.0.0b2...v1.0.0-beta.8
 .. _`1.0.0b2`: https://github.com/dwayne/whitespace-python/compare/v1.0.0b1...v1.0.0b2
 .. _`1.0.0b1`: https://github.com/dwayne/whitespace-python/compare/v0.1.0.dev2...v1.0.0b1

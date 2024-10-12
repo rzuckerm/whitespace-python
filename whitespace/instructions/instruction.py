@@ -4,7 +4,7 @@ import abc
 class Instruction(abc.ABC):
     @abc.abstractmethod
     def execute(self, vm):
-        pass
+        """Execute an instruction"""
 
 
 class Noop(Instruction):

@@ -1,4 +1,3 @@
-import io
 import unittest
 
 from whitespace.instructions.io import Getc, Getn, Putc, Putn
@@ -17,9 +16,9 @@ class PutcTestCase(unittest.TestCase):
         Putc().execute(vm)
 
         self.assertEqual(len(vm.vstack), 0)
-        self.assertEqual(screen.contents, 'a')
+        self.assertEqual(screen.contents, "a")
 
-        screen.turnOff()
+        screen.turn_off()
 
 
 class PutnTestCase(unittest.TestCase):
@@ -33,14 +32,16 @@ class PutnTestCase(unittest.TestCase):
         Putn().execute(vm)
 
         self.assertEqual(len(vm.vstack), 0)
-        self.assertEqual(screen.contents, '97')
+        self.assertEqual(screen.contents, "97")
 
-        screen.turnOff()
+        screen.turn_off()
 
 
 class GetcTestCase(unittest.TestCase):
-    def test_it_reads_a_character_and_places_it_at_the_address_on_the_top_of_the_value_stack(self):
-        keyboard = TestKeyboard('ab')
+    def test_it_reads_a_character_and_places_it_at_the_address_on_the_top_of_the_value_stack(
+        self,
+    ):
+        keyboard = TestKeyboard("ab")
 
         vm = VM()
         vm.keyboard = keyboard
@@ -55,8 +56,10 @@ class GetcTestCase(unittest.TestCase):
 
 
 class GetnTestCase(unittest.TestCase):
-    def test_it_reads_a_number_and_places_it_at_the_address_on_the_top_of_the_value_stack(self):
-        keyboard = TestKeyboard('1234')
+    def test_it_reads_a_number_and_places_it_at_the_address_on_the_top_of_the_value_stack(
+        self,
+    ):
+        keyboard = TestKeyboard("1234")
 
         vm = VM()
         vm.keyboard = keyboard

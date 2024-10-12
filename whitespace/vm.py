@@ -28,13 +28,13 @@ class VM:
             pass
 
     def _reset(self):
-        self.vstack = Stack('value stack')
-        self.cstack = Stack('call stack')
+        self.vstack = Stack("value stack")
+        self.cstack = Stack("call stack")
         self.memory = Memory()
         self.pc = 0
 
     def _fetch_instruction(self):
         try:
             return self.instructions[self.pc]
-        except IndexError:
-            raise OutOfBoundsError('program counter: %d' % self.pc)
+        except IndexError as exc:
+            raise OutOfBoundsError("program counter: %d" % self.pc) from exc
