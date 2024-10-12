@@ -1,6 +1,6 @@
 import unittest
 
-from whitespace.instructions.stack_manipulation import Discard, Dup, Push, Swap
+from whitespace.instructions.stack_manipulation import Copy, Discard, Dup, Push, Slide, Swap
 from whitespace.vm import VM
 
 
@@ -49,3 +49,33 @@ class DiscardTestCase(unittest.TestCase):
         Discard().execute(vm)
 
         self.assertEqual(len(vm.vstack), 0)
+
+
+class CopyTestCase(unittest.TestCase):
+    def test_it_copies_the_requested_item_on_the_value_stack(self):
+        vm = VM()
+        vm.vstack.push(1)
+        vm.vstack.push(2)
+        vm.vstack.push(3)
+
+        Copy(1).execute(vm)
+
+        self.assertEqual(len(vm.vstack), 4)
+        self.assertEqual(vm.vstack.pop(), 2)
+
+
+class SlideTestCase(unittest.TestCase):
+    def test_it_discards_the_requested_items_off_value_stack_and_pushes_top_onto_value_stack(
+        self,
+    ):
+        vm = VM()
+        vm.vstack.push(1)
+        vm.vstack.push(2)
+        vm.vstack.push(3)
+        vm.vstack.push(4)
+
+        Slide(2).execute(vm)
+
+        self.assertEqual(len(vm.vstack), 2)
+        self.assertEqual(vm.vstack.pop(), 4)
+        self.assertEqual(vm.vstack.pop(), 1)

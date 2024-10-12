@@ -37,6 +37,15 @@ class StackEmptyError(RuntimeError, IndexError):
         return str(self._name)
 
 
+class StackIndexError(RuntimeError, IndexError):
+    def __init__(self, name):
+        super().__init__()
+        self._name = name
+
+    def __str__(self):
+        return str(self._name)
+
+
 class OutOfBoundsError(RuntimeError, IndexError):
     pass
 

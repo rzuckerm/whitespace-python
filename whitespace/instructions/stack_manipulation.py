@@ -27,3 +27,25 @@ class Swap(Instruction):
 class Discard(Instruction):
     def execute(self, vm):
         vm.vstack.pop()
+
+
+class Slide(Instruction):
+    def __init__(self, n):
+        super().__init__()
+        self.n = n
+
+    def execute(self, vm):
+        t = vm.vstack.pop()
+        for _ in range(self.n):
+            vm.vstack.pop()
+
+        vm.vstack.push(t)
+
+
+class Copy(Instruction):
+    def __init__(self, n):
+        super().__init__()
+        self.n = n
+
+    def execute(self, vm):
+        vm.vstack.push(vm.vstack[self.n])
