@@ -15,10 +15,10 @@ def main(args=None):
         return 1
     except RuntimeError:
         logging.exception("Please check your code. There was a problem executing it.")
-        return 1
+        return 2
     except:
         logging.exception("Sorry, an unexpected error occurred.")
-        return 2
+        return 3
 
     return 0
 
