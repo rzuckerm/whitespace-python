@@ -10,7 +10,7 @@ Change Log
 - Add CODEOWNERS file (fixes `#8 <https://github.com/rzuckerm/whitespace-python/issues/8>`_)
 - Add Github actions for the following:
   - Lint and Test (fixes `#6 <https://github.com/rzuckerm/whitespace-python/issues/6>`_)
-  - Publish (fixes #7 <https://github.com/rzuckerm/whitespace-python/issues/7>`_)
+  - Publish (fixes `#7 <https://github.com/rzuckerm/whitespace-python/issues/7>`_)
 - Add tests for CLI (fixes `#14 <https://github.com/rzuckerm/whitespace-python/issues/14>`_). Test coverage is now **100%**
 
 **Changed**
@@ -19,7 +19,7 @@ Change Log
 - Renamed package from ``whitespace`` to ``whitespace2`` (fixes `#9 <https://github.com/rzuckerm/whitespace-python/issues/9>`_)
 - Convert project to use `Poetry <https://python-poetry.org/docs/>`_ in order to simplify dependency management and publishing (fixes `#5 <https://github.com/rzuckerm/whitespace-python/issues/5>`_)
 - Number and label parsing is now done iteratively instead of recursively (fixes `#3 <https://github.com/rzuckerm/whitespace-python/issues/3>`_)
-- ```whitespace.interpreter.eval`` is renamed to ```whitespace.interpreter.run`` (fixes `#2 <https://github.com/rzuckerm/whitespace-python/issues/2>`_)
+- ``whitespace.interpreter.eval`` is renamed to ```whitespace.interpreter.run`` (fixes `#2 <https://github.com/rzuckerm/whitespace-python/issues/2>`_)
 
 `1.0.0-beta.8`_ (2018-08-31)
 ++++++++++++++++++++++++++++
