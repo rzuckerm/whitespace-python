@@ -1,11 +1,21 @@
 Whitespace
 ==========
 
-.. image:: https://img.shields.io/pypi/v/whitespace2.svg
-    :target: https://pypi.org/project/whitespace2/
-
 .. image:: https://github.com/rzuckerm/whitespace-python/actions/workflows/makefile.yml/badge.svg
     :target: https://github.com/rzuckerm/whitespace-python/actions/workflows/makefile.yml
+    :alt: Makefile CI
+
+.. image:: https://img.shields.io/pypi/v/whitespace2.svg
+    :target: https://pypi.org/project/whitespace2/
+    :alt: PyPI version
+
+.. image:: https://img.shields.io/pypi/pyversions/whitespace2
+    :target: https://pypi.org/project/whitespace2/
+    :alt: Python versions
+
+.. image:: https://img.shields.io/pypi/wheel/whitespace2
+    :target: https://pypi.org/project/whitespace2/
+    :alt: Python wheel
 
 An interpreter written in `Python <https://www.python.org/>`_ for the imperative, stack-based language called `Whitespace`_.
 This is a fork of `<https://github.com/dwayne/whitespace-python>`_.
