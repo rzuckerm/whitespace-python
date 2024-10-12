@@ -1,3 +1,4 @@
+# pylint: disable=pointless-statement
 import unittest
 
 from whitespace.error import StackEmptyError, StackIndexError

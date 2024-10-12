@@ -65,7 +65,7 @@ class CopyTestCase(unittest.TestCase):
 
 
 class SlideTestCase(unittest.TestCase):
-    def test_it_discards_the_requested_items_off_the_value_stack_and_pushes_the_top_onto_the_value_stack(
+    def test_it_discards_the_requested_items_off_value_stack_and_pushes_top_onto_value_stack(
         self,
     ):
         vm = VM()
