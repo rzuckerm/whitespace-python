@@ -53,8 +53,8 @@ Development
 
 Recommended tools:
 
- - `poetry`_
- - `make <https://www.gnu.org/software/make/>`_
+- `poetry`_
+- `make <https://www.gnu.org/software/make/>`_
 
 Clone the repository and install the dependencies:
 
